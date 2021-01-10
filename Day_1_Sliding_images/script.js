@@ -14,8 +14,8 @@ panels.forEach((panel, index) => {
 });
 
 document.addEventListener("keydown", function (e) {
-  switch (e.keyCode) {
-    case 37:
+  switch (e.key) {
+    case "ArrowLeft":
       removeOtherActiveClasses();
       i--;
       if (i == -1) i = 4;
@@ -24,7 +24,7 @@ document.addEventListener("keydown", function (e) {
       setAnimation = setInterval(animation, 2500);
       break;
 
-    case 39:
+    case "ArrowRight":
       removeOtherActiveClasses();
       i++;
       i = i % 5;
