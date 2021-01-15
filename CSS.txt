@@ -1,4 +1,5 @@
-FONT :
+
+***** FONT ***** :
 
 -----	font-family :
 
@@ -11,10 +12,42 @@ FONT :
 	5. Fantasy :	fonts are decorative/playful fonts.
 
 
-POSITIONING :
+
+
+***** POSITIONING ***** :
+
+ https://stackoverflow.com/questions/19968979/what-are-the-default-top-left-botton-or-right-values-when-positionabsolute-is
+
+-----	Position : Absolute , Relative , Static , Fixed  &  Sticky
+
+	By Default all html elements are positioned 'static' (normal position in the document flow)
+	left, right, top, bottom, margin are '0' when all are auto.(not sure)
+
+-->	Static :	Default position is according to the document flow of all elements.
+
+--> 	Relative : 	Default position is same as in the document flow(static), but it has four properties : left, right, top & bottom.
+		Positioned relative to its static position using left, right, top & bottom (all set to '0' by default)
+		Other elements do position themselves pretending that this element exist.
+
+-->	Absolute : Default position is same as in the document flow except that, other elements pretend that it is deleted.
+		Its position properties (left, right, top & bottom) are all set to auto by default.
+		Positioned relative to the 'parent which has position property set to "other than static" '
+		
+-->	Fixed : 	Default position is same as in the document flow except that, other elements pretend that it is deleted.
+		Its position properties are all set to auto by default.
+		Positioned relative to the "View Port (Display)"
+
+-->	Sticky : 	Default position is same as in the document flow(static).
+		Its position properties (left, right, top & bottom) are all set to auto by default.
+		Positioned relative to the "View Port (Display)"
+
+	For positioned elements (non Static) :-
+-----	z-index :	Used to positon Divs below or above other elements.
+-----	(left,right,top,bottom)='0' and margin : auto => makes element position at the center of parent.
+_______________________________________________________________________________________________________________
 
 	Note : For positioning "height" and "width" should be assigned.
-	
+
 -----	display: flex;
   	flex-direction: column;	//	Items stacked as Rows
   	align-items: center;		//	Horizontally center items
@@ -29,14 +62,152 @@ POSITIONING :
 	height: 1000px;
 	width: 1000px;
 
-
-LENGTHS :	
-
------	Note : There are two types of length units:	 absolute and relative.
+-----	Float : Now a days float is being replaced by Flexbox
 
 
-OTHER :
+
+
+***** LENGTHS ***** :	
+
+-----	Note : There are two types of length units:	 Absolute & Relative.
+
+Relative Lengths are based on : -
+	1.	Parents dimentions (%)
+	2.	Currently declared font-attribures (em, rem, ex, ch)
+	3.	View Port dimentions (vh, vw, vmin, vmax)
+________________________________________________________
+%	Relative to the parent element			|
+vw	Relative to 1% of the width of the viewport*	|
+vh	Relative to 1% of the height of the viewport*	|
+vmin	Relative to 1% of viewport's* smaller dimension	|
+vmax	Relative to 1% of viewport's* larger dimension	|
+------------------------------------------------------------------------------------|
+em	Relative to the font-size of the element (2em means 2 times the size of the current font)	
+rem	Relative to font-size of the root element	
+ch	Relative to the width of the "0" (zero)	
+ex	Relative to the x-height of the current font (rarely used)
+
+Absolute Lengths are not based on anything 
+________________________________________________________
+px	pixels (1px = 1/96th of 1in)			|
+	This Laptop has dimentions : 1366px * 768px	|
+------------------------------------------------------------------------------------|
+cm	centimeters
+mm	millimeters
+in	inches (1in = 96px = 2.54cm)
+
+
+
+
+***** OTHER ***** :
 
 -----	overflow : hidden, scroll, auto, or visible	//	https://www.w3schools.com/cssref/pr_pos_overflow.asp 
 
+-----	pseudo classes, @media( ){    }, :nth-of-type( )
 
+TRANSITION :
+
+	transition-property		: The property that gets over ridden like [felx, width, transform, etc] (use 'all' for all)
+	transition-duration		: Specifies how many seconds a transition effect takes to complete
+	transition-timing-function	: Specifies the speed curve of the transition effect (see below)
+	transition-delay		: specifies a delay (in seconds) for the transition effect
+
+-----	transition : [property]  [duration]  [timing-function]  [delay]  ;
+
+	transition-timing-function :-
+	ease -	 	specifies a transition effect with a slow start, then fast, then end slowly (this is default)
+	linear - 		specifies a transition effect with the same speed from start to end
+	ease-in - 		specifies a transition effect with a slow start
+	ease-out - 		specifies a transition effect with a slow end
+	ease-in-out - 	specifies a transition effect with a slow start and end
+
+
+TRANSFORM :
+
+	scale( ): 	Scales the size of the element. [ values in whole/decimals (2, 0.5) ]
+		This also applies to the font-size, padding, height, and width of an element, too. 
+			scaleX( ), scaleY( )	
+	skew( ): 	Tilts an element like turning a rectangle into a parallelogram. [ values in degrees (-25deg, 25deg) ] 
+			skewX( ), skewY( ) 	
+	translate( ): Moves an element sideways or up and down. [ values in pixels (20px, -10px) ]
+			translateX( ), translateY( )
+	rotate( ): 	Rotates the element clockwise from its current position. [ values in degrees (-25deg) ]
+
+	With a space-separated list you can add multiple values to the transform property:
+-----  	transform: scale(20) skew(-20deg);
+
+	transform-origin: 	x-axis y-axis ;	// From where the transform starts 
+			( left / center / right / length / % )  ( top / center / bottom / length / % )
+
+CURSOR :
+	
+-----	cursor : property;     	for different types of mouse pointers.
+
+	properties :
+		pointer		: Hand symbol
+		not-allowed	: No Parking symbol
+		wait 		: Loading animation
+		none		: Dissappears
+		move		: 4 arrows
+		grab, grabbing	: Holding hand symbol
+
+
+BACKGROUND :			https://www.w3schools.com/css/css_background_shorthand.asp
+
+	background		: Sets all the background properties in one declaration ( short-hand-notation ) 
+	background-image		: Sets the background image for an element
+	background-size		: Specifies the size of the background image(s)
+	background-repeat		: Sets how a background image will be repeated
+	background-color		: Sets the background color of an element
+	background-attachment	: Sets whether a background image is fixed or scrolls with the rest of the page
+	background-clip		: Specifies the painting area of the background
+	background-position		: Sets the starting position of a background image
+	background-origin		: Specifies the background image(s) start position
+
+background-image:
+		url('URL')		: The URL to the image. For more than one image, separate the URLs with a comma.
+		linear-gradient()	: Sets a linear gradient as the background image. 
+  				  linear-gradient(direction, color1, color2,... );
+  				  linear-gradient(to right bottom, red, orange, yellow, green, blue, indigo, violet);
+		radial-gradient()	: Sets a radial gradient as the background image.
+
+background-size :
+		cover		: Resize the background image to cover the entire container.
+		contain		: Resize the background image to make sure the image is fully visible.
+		width height	:- background-size : auto  100%      	or  	200px  500px
+				If only one value is given, the second is set to "auto".
+background-repeat :	
+		repeat
+		repeat-x
+		repeat-y
+		no-repeat
+		space
+		round		https://www.w3schools.com/cssref/playit.asp?filename=playcss_background-repeat
+
+background-color :
+		#0a4d1f
+		rgb( )
+		rgba( )
+		transparent
+
+background-attachment :
+		scroll		: The background image will scroll with the page. This is default
+		fixed		: The background image will not scroll with the page
+		local		: The background image will scroll with the element's contents
+
+background-clip :
+		border-box	: Default value. The background extends behind the border	
+		padding-box	: The background extends to the inside edge of the border	
+		content-box	: The background extends to the edge of the content box
+
+background-position : 
+		widthLength  heightLength ;	( Length in % or pixels )
+		widthPosition  heightPosition ;	( left / center / right )  ( top / center / bottom )
+				 
+background-origin :
+		border-box	: Default value. The background starts from the border top left	
+		padding-box	: The background starts from the padding top left	
+		content-box	: The background starts from the content-box top left
+
+
+		

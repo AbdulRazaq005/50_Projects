@@ -25,7 +25,7 @@ body {
   height: 80vh;
   color: azure;
   cursor: pointer;
-  flex: 0.5;
+  flex: 1;
   margin: 10px;
   position: relative;
   transition: flex 0.7s ease-out;
@@ -40,7 +40,7 @@ body {
   opacity: 0;
 }
 .panel.active {
-  flex: 7;
+  flex: 10;
   opacity: 1;
 }
 .panel.active h3 {
